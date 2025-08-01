@@ -3,13 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTAFÓLIO</title>
+    <title>Site - Manuel Padilla</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Welcome</h2>
-    <h3>Portafólio | Manuel Padilla</h3>
-    <p>Óla, seja bem-vindo ao meu portafólio, sou aluno de sistemas de Informação em 4to semestre </p>
-    <button>Aqui começamos</button>
+    <div id="intro">
+        <h1>Manuel Padilla | Portafólio</h1>
+    </div>
+    <script src="script.js"></script>
+    <header>
+        <div class="logo">Manuel Padilla  <> </div>
+        <nav class="nav">
+            <a href="#home"> Home </a> <!--o simbolo "#" serve quando fazer click no nav le direciona suavemente-->
+            <a href="#about"> About </a>
+            <a href="#skills"> Skills </a>
+            <a href="#projects"> Projects </a>
+            <a href="#contato"> Contato </a>
+        </nav>
+    </header>
+    <main>  
+        <div id="home" class="primerConteiner">  <!--o id serve para a navegação do nav te direcionar-->
+            <div class="info">
+                <p class="hello">hello world, I'm</p>
+                <h2 class="name">Manuel Padilla</h2>
+                <p class="web">Web Developer</p>
+                <p class="welcome">Welcome to My personal website  ;) </p>
+            </div>
+            <div class="Photo">
+                <img class="me_photo" src="imagens/Photo_Portafolio.png" alt="Photo">
+            </div>
+        </div>
+
+
+        <div id="about" class="segundoContainer"> <!--o id serve para a navegação do nav te direcionar-->
+            <h2 class="subtitulos"> About </h2>
+            <div class="cardAbout">
+                
+            <div class="Photo">
+                <img class="me_photo" src="imagens/photo2SF.png" alt="Photo">
+            </div>
+            <br>Sou estudante de Sistemas de Informação, atualmente no 4º semestre, com foco em desenvolvimento 
+            de software e soluções tecnológicas inovadoras. Tenho experiência prática em linguagens como HTML, CSS,
+            Java, Python e Swift (iOS), e estou sempre em busca de novos desafios para aprimorar minhas habilidades.<br>
+
+            Atualmente, participo de um projeto de Iniciação Científica voltado à criação de sistemas de localização em
+            ambientes inteligentes (Smart Campus), o que reforça meu interesse por pesquisa aplicada, sensores,
+            automação e integração de sistemas.<br></br>
+
+            Tenho comprometimento com a qualidade, responsabilidade nas entregas e paixão por transformar ideias
+            em soluções reais. Este portfólio reúne alguns dos meus projetos e aprendizados mais importantes até agora.<br></br>
+
+            Vamos conversar? Estou aberto a colaborações, estágios e oportunidades que me permitam continuar evoluindo professionalmente.
+            
+            </div>
+        </div>
+
+
+        <div id="skills" class="tercerContainer"> <!--o id serve para a navegação do nav te direcionar-->
+            <h2 class="subtitulos">Skills</h2>
+            <div class="cardHabilidades">
+                <div class="cardHabi">
+                    <img class="logoLinguagens" src="imagens/html.png" alt="linguagen1">
+                    <p>HTML5</p>
+                </div>
+                <div class="cardHabi">
+                    <img class="logoLinguagens" src="imagens/css.png" alt="linguagen2">
+                    <p>CSS3</p>
+                </div>
+                <div class="cardHabi">
+                    <img class="logoLinguagens" src="imagens/java.png" alt="linguagen3">
+                    <p>JAVA</p>
+                </div>  
+                <div class="cardHabi">
+                    <img class="logoLinguagens" src="imagens/swift.png" alt="linguagen4">
+                    <p>SWIFT</p>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <div id="projects" class="quartoConteiner"> <!--o id serve para a navegação do nav te direcionar-->
+            <h2 class="subtitulos"> Projects </h2>
+            <div class="cardProjects">
+                <div class="cardPro">
+                    <div onclick="this.classList.toggle('flipped')">
+                        <div class="cardInner">
+                            <div class="cardFront cardCorDegrade1"></div>
+                            <div class="cardBack">
+                                <p>
+                                    Este projeto visa implementar um sistema de OKRs (Objectives and Key Results) para organizações pequenas e médias, permitindo acompanhar metas em tempo real. Utiliza HTML, CSS, JS e Firebase para backend leve e funcional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="TituloCard">01| Iniciação Cientifica</p>
+                </div>
+
+
+                <div class="cardPro">
+                    <div onclick="this.classList.toggle('flipped')">
+                        <div class="cardInner">
+                            <div class="cardFront cardCorDegrade2"></div>
+                            <div class="cardBack">
+                                <p>
+                                    Este projeto visa implementar um sistema de OKRs (Objectives and Key Results) para organizações pequenas e médias, permitindo acompanhar metas em tempo real. Utiliza HTML, CSS, JS e Firebase para backend leve e funcional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="TituloCard">02| Sistemas de OKRs</p>
+                </div>
+
+                <div class="cardPro">
+                    <div onclick="this.classList.toggle('flipped')">
+                        <div class="cardInner">
+                            <div class="cardFront cardCorDegrade3"></div>
+                            <div class="cardBack">
+                                <p>
+                                    Este projeto visa implementar um sistema de OKRs (Objectives and Key Results) para organizações pequenas e médias, permitindo acompanhar metas em tempo real. Utiliza HTML, CSS, JS e Firebase para backend leve e funcional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="TituloCard">03| Interprét</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="contato" class="quintoContainer"> <!--o id serve para a navegação do nav te direcionar-->
+            <!-- <h2 class="subtitulos">Contato</h2> -->
+            <!-- <div class="cardContato"> -->
+                <div class="OsLogos">
+                    <a href="https://github.com/Padilla-Manuel" class="infoLogotipo">  
+                        <img class="logoContato" src="imagens/github.png" alt="ícone do GitHub">
+                    </a>
+                    <a href="https://www.linkedin.com/in/manuel-sanchez-padilla-2847b5280/" class="infoLogotipo">
+                        <img class="logoContato" src="imagens/linkedin.png" alt="ícone do linkedin">
+                    </a>
+                    <a href="mailto:sanchezpadillamanuelfermin758@gmail.com" class="infoLogotipo">
+                        <img class="logoContato" src="imagens/gmail.png" alt="ícone do gmail">
+                    </a>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+        
+    </main>
+
 </body>
 </html>
