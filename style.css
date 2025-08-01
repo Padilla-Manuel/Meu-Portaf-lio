@@ -1,28 +1,420 @@
+html {
+  scroll-behavior: smooth;
+}
+/*isto serve para a navegação do nav, quando fizer click te leva para lugar no msm site */
+.segundoContainer,
+.tercerContainer,
+.quartoConteiner,
+.quintoContainer {
+  scroll-margin-top: 100px; /* ajusta para evitar que o header esconda o topo da seção */
+}
+
 body{
-    background-color: rgb(27, 48, 99);
+    background-color: rgba(239, 239, 239, 0.678); 
 }
 
-h2{
-    font-family: 'Courier New', Courier, monospace;
-    color: rgb(117, 207, 207);
+::selection {
+  background-color: rgb(245, 215, 79); 
 }
 
-h3{
-    color:rgb(237, 237, 240);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 42px;
+
+header {    
+    color: aliceblue;
+    width: 100%;
+    background-color: rgba(82, 82, 82, 0.8);
+    position: fixed; /* fica no topo sempre */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0; /*psrs preencher toda a página*/
+    left: 0; /*psrs preencher toda a página*/
+    padding: 13px;
+    z-index: 1000; /*aqui ajuda a que o header pase por cima das cards*/
 }
 
-p{
-    color:rgb(207, 207, 224);
+.logo {
+    white-space: nowrap;    
+    display: flex;
+    align-items: center;
+    margin-left: 110px; /*movimento o "Manuel Padilla {}" um poquinho pra direita*/
+    transition: 0.3s ease; /*esta "transition" é o tempo mude de cor*/
+}
+/* Aqui quando o mouse pasa pelas letras do "Manuel Padilla {}" mudam de cor*/
+.logo:hover{
+  color: rgb(245, 215, 79);
 }
 
-button{
-    color: rgb(58, 82, 82);
-    width: 150px;
-    height: 50px;
-    font-size: 14px;
-    background-color: antiquewhite;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+.nav {
+    display: flex;
+    gap: 4rem;  /* espaço entre os links */
+    margin-right: 128px; /* empurra tudo um pouco pra dentro */
+    font-size: 20px;
     
+}
+
+.nav a{
+    color: aliceblue;
+    text-decoration: none;
+    transition: 0.3s ease-out;/*esta "transition" é o tempo mude de cor*/
+}
+/* Aqui quando o mouse pasa pelas letras do header (Home, about...)  mudam de cor*/
+.nav a:hover{
+  color: rgb(245, 215, 79);
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /*aqui apenas coloca a imagem no meio*/
+    gap: 200px; /*aqui separou a imagem da descrição horinzontalmente*/
+    padding: 10rem; /*aqui todo (imagem e descricao) desceu para o meio*/
+}
+
+
+
+/* PRIMEIRO */
+
+
+
+.primerConteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* Espaço entre o texto e a imagem */
+    padding: 64px;
+    scroll-margin-top:200px; /*me leva a Home completamente */
+}
+
+.info{
+    color: rgb(72, 68, 68);
+    white-space: nowrap;/*aqui a linhas da descricao não quebra*/
+} 
+
+/*Aqui é para tirar o espaço entre as linhas*/
+.hello,
+.name,
+.web{
+    margin: 0;
+}
+
+.name{
+    font-size: 65px;
+}
+
+.web{
+    font-size: 25px;
+}
+
+.Photo .me_photo {
+    width: 299px;
+    height: 299px;
+    border-radius: 50%;
+    border: 5px solid #f5d74f;
+    box-shadow: 0px 4px 12px rgb(245, 215, 79); /*sombra*/
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/*aumenta o brilho cada vez que pasa o maouse*/
+.Photo .me_photo:hover {
+    box-shadow: 0px 0px 20px 10px rgb(245, 215, 79);
+}
+
+/* SEGUNDO */
+
+
+
+.segundoContainer {
+    color: rgb(72, 68, 68);
+    text-align: justify; /* opcional, para alinhamento do texto */
+    font-size: 20px;
+}
+
+.subtitulos{
+    color: rgb(72, 68, 68);
+}
+
+.cardAbout{
+    width: 1045px;/* 1174px; */
+    height: 400px;
+    background-color: rgba(239, 239, 239, 0.678);
+    border-radius: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* Espaço entre o texto e a imagem */
+    padding: 64px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.403); /*sombra*/ /*box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.774); sombra*/
+    transition: 0.3s ease-out;/*esta "transition" é o tempo mude de cor*/
+}
+/* Aqui quando o mouse passa muda a cor */
+.cardAbout:hover{
+  background: rgba(215, 215, 215, 0.678);
+}
+
+
+/* TERCEIRO */
+
+
+
+.tercerContainer{
+    color: aliceblue;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.cardHabilidades{
+    display: flex;
+    /*flex-wrap: wrap ; aqui permite que o "swift" vai pra seguinte linha*/
+    justify-content: center;
+    gap:137px;
+    padding: 0px; /*aqui alinha o "about" com "projects"*/
+    color: rgb(72, 68, 68); /*a cor das letras dos nomes do programa*/
+}
+
+.logoLinguagens{
+    width: 50px;
+    height: 50px;
+}
+
+.cardHabi{
+    width: 200px;
+    height: 70px;
+    background-color: rgba(239, 239, 239, 0.678);
+    border-radius: 15px;
+    gap: 30px;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.403); /*sombra*/
+    transition: 0.3s ease-out;/*esta "transition" é o tempo mude de cor*/
+}
+
+.cardHabi:hover{
+  background: rgba(215, 215, 215, 0.678);   
+}
+
+
+/* QUARTO */
+
+
+
+.quartoConteiner{
+    text-align: justify;
+    font-size: 20px;
+}
+
+.cardProjects{
+    display: flex;
+    flex-direction: column; /* agora empilha verticalmente */
+    align-items: flex-start;  
+    gap:90px;
+    padding: 0px; /*aqui alinha o "about" com "projects"*/
+}
+
+.cardPro{
+    width: 1174px;
+    background-color: rgba(239, 239, 239, 0.678);
+    border-radius: 35px;
+    gap: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.403); /*sombra*//* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.774); sombra */
+    /* desde aqui é apenas para a parde da cor do dregade, e não para a card grande, apenas a card de dentro */
+    /* display: flex;
+    justify-content: center;
+    align-items:flex-start; */
+    display: flex;
+    flex-direction: column; /* Para empilhar o conteúdo verticalmente */
+    justify-content: space-between; /* Deixa o conteúdo nas extremidades: topo e base */
+    align-items: center;
+    /*padding: 10px;  Espaço interno */
+}
+
+/*ESTA PARTE É PARA A ANIMÇÃO DAS CARDS E VIRAR*/
+
+
+.cardInner {
+  width: 1160px;
+  height: 300px;
+  position: relative;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBack {
+  background-image: linear-gradient(to bottom right, rgba(191, 192, 189, 0.579), rgba(197, 197, 185, 0.47));
+  transform: rotateY(180deg);
+  margin-top: 10px;
+  width: 1160px; 
+  height: 300px;
+}
+
+.TituloCard{
+    color: rgb(72, 68, 68);
+    font-size: 48px;
+    font-family:-apple-system;
+    font-family: Open Sans Bold;
+    margin: 0; /* Remove espaçamento externo */
+}
+
+
+.cardCorDegrade1{
+    border-radius: 35px;
+    background-image: linear-gradient(to bottom right, rgb(229, 126, 70), rgb(235, 231, 126));/* background-image: linear-gradient(to bottom right, rgb(233, 230, 216), rgb(202, 209, 240)); */
+    width: 1160px; 
+    height: 300px; 
+    margin-top: 10px; /*com isto a parte do degrande pode baixar umm pouquinho da card */
+}
+
+.cardCorDegrade2{
+    border-radius: 35px;
+    background-image: linear-gradient(to bottom right, rgb(202, 220, 123), rgb(166, 233, 179));
+    width: 1160px; 
+    height: 300px; 
+    margin-top: 10px; /*com isto a parte do degrande pode baixar umm pouquinho da card */
+}
+
+.cardCorDegrade3{
+    border-radius: 35px;
+    background-image: linear-gradient(to bottom right, rgb(106, 113, 219), rgb(165, 197, 193));
+    width: 1160px; 
+    height: 300px; 
+    margin-top: 10px; /*com isto a parte do degrande pode baixar umm pouquinho da card */
+}
+
+
+/* QUINTO */
+
+.quintoContainer{
+    color: aliceblue;
+    text-align: justify;
+    font-size: 20px;
+}
+
+    /* .cardContato{
+        width: 1174px;
+        height: 110px;
+        background-color: rgba(239, 239, 239, 0.678);
+        border-radius: 35px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.403); /*sombra*//*box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.774); sombra*/
+    /* } */ 
+
+.OsLogos{
+    display: flex;
+    justify-content: center; /* Centraliza na horizontal */
+    gap: 50px;  /*Espaço entre os quadrados */
+    /* margin-top: 30px; */
+}
+
+/*aqui o cuadrado das imagens*/
+.infoLogotipo{
+    background-color: rgba(239, 239, 239, 0.678);
+    width: 200px;
+    height: 70px;
+    border-radius: 15px;
+    border: 5px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    transition: 0.400s;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.403);
+}
+
+/*aqui muda a cor quando passar o mouse por cima (de red para blue)*/
+.infoLogotipo:hover{
+  background: rgba(215, 215, 215, 0.678);   
+}
+
+/*aqui muda a cor da imagem (apenas para imagens render)*/
+.infoLogotipo:hover .logo {
+    filter: invert(40%) sepia(100%) saturate(500%) hue-rotate(180deg);
+}
+
+/*logotipos das imagens*/
+.logoContato{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*A parte incial da página, quando voce entra*/
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(239, 239, 239);  
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  z-index: 9999;
+  animation: fadeOut 2s ease forwards;
+  animation-delay: 2.5s;
+} 
+
+/* Desaparecer suavemente */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/*Portafólio | Manuel Padilla A PRIMEIRA PARTE*/
+h3{
+    color:rgb(9, 9, 11);
+    font-family: sans-serif;
+    font-size: 70px;
+    display: flex;
+    justify-content: center; 
+}
+
+
+
+.descricaoTexto {
+  padding: 20px;
+  font-size: 18px;
+  color: #444;
+  background-color: #ffffffc0;
+  border-radius: 20px;
+  margin-top: 10px;
+  width: 100%;
 }
