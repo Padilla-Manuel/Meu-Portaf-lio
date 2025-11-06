@@ -11,23 +11,23 @@ html {
 
 body{
     background-color: rgba(239, 239, 239, 0.678); 
+    font-family: Noto Sans, sans-serif;
 }
-
+/*serve para a seleção de texto*/
 ::selection {
   background-color: rgb(245, 215, 79); 
 }
 
-
 header {    
-    color: aliceblue;
+    color: rgb(255, 252, 252);
     width: 100%;
     background-color: rgba(82, 82, 82, 0.8);
     position: fixed; /* fica no topo sempre */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    top: 0; /*psrs preencher toda a página*/
-    left: 0; /*psrs preencher toda a página*/
+    top: 0; /*para preencher toda a página*/
+    left: 0; /*para preencher toda a página*/
     padding: 13px;
     z-index: 1000; /*aqui ajuda a que o header pase por cima das cards*/
 }
@@ -37,32 +37,30 @@ header {
     display: flex;
     align-items: center;
     margin-left: 110px; /*movimento o "Manuel Padilla {}" um poquinho pra direita*/
-    transition: 0.3s ease; /*esta "transition" é o tempo mude de cor*/
+    transition: 0.1s ease; /*esta "transition" é o tempo mude de cor*/
+    font-size: 20px;
 }
 /* Aqui quando o mouse pasa pelas letras do "Manuel Padilla {}" mudam de cor*/
 .logo:hover{
   color: rgb(245, 215, 79);
 }
 
-
 .nav {
     display: flex;
     gap: 4rem;  /* espaço entre os links */
     margin-right: 128px; /* empurra tudo um pouco pra dentro */
     font-size: 20px;
-    
 }
 
 .nav a{
-    color: aliceblue;
+    color: rgb(255, 252, 252);
     text-decoration: none;
-    transition: 0.3s ease-out;/*esta "transition" é o tempo mude de cor*/
+    transition: 0.1s ease-out;/*esta "transition" é o tempo mude de cor*/
 }
 /* Aqui quando o mouse pasa pelas letras do header (Home, about...)  mudam de cor*/
 .nav a:hover{
   color: rgb(245, 215, 79);
 }
-
 
 main{
     display: flex;
@@ -73,11 +71,7 @@ main{
     padding: 10rem; /*aqui todo (imagem e descricao) desceu para o meio*/
 }
 
-
-
 /* PRIMEIRO */
-
-
 
 .primerConteiner {
     display: flex;
@@ -92,7 +86,6 @@ main{
     color: rgb(72, 68, 68);
     white-space: nowrap;/*aqui a linhas da descricao não quebra*/
 } 
-
 /*Aqui é para tirar o espaço entre as linhas*/
 .hello,
 .name,
@@ -117,31 +110,28 @@ main{
     transition: box-shadow 0.3s ease-in-out;
 }
 
+
 /*aumenta o brilho cada vez que pasa o maouse*/
 .Photo .me_photo:hover {
     box-shadow: 0px 0px 20px 10px rgb(245, 215, 79);
 }
 
 /* SEGUNDO */
-
-
-
 .segundoContainer {
     color: rgb(72, 68, 68);
     text-align: justify; /* opcional, para alinhamento do texto */
     font-size: 20px;
 }
-
-.subtitulos{
-    color: rgb(72, 68, 68);
+.subtitulos {
+  color: rgb(72, 68, 68);
+  margin-top: 30px; /* ajusta a distância superior */
+  margin-bottom: 20px; /* ajusta o espaço antes dos cards */
 }
-
 .cardAbout{
     width: 1045px;/* 1174px; */
-    height: 400px;
+    height: 250px;
     background-color: rgba(239, 239, 239, 0.678);
     border-radius: 35px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,17 +145,13 @@ main{
   background: rgba(215, 215, 215, 0.678);
 }
 
-
 /* TERCEIRO */
 
-
-
 .tercerContainer{
-    color: aliceblue;
+    color: rgba(239, 239, 239, 0.678);
     text-align: justify;
     font-size: 20px;
 }
-
 .cardHabilidades{
     display: flex;
     /*flex-wrap: wrap ; aqui permite que o "swift" vai pra seguinte linha*/
@@ -193,129 +179,114 @@ main{
     transition: 0.3s ease-out;/*esta "transition" é o tempo mude de cor*/
 }
 
-.cardHabi:hover{
-  background: rgba(215, 215, 215, 0.678);   
-}
-
-
 /* QUARTO */
-
-
 
 .quartoConteiner{
     text-align: justify;
     font-size: 20px;
 }
-
-.cardProjects{
-    display: flex;
-    flex-direction: column; /* agora empilha verticalmente */
-    align-items: flex-start;  
-    gap:90px;
-    padding: 0px; /*aqui alinha o "about" com "projects"*/
-}
-
-.cardPro{
-    width: 1174px;
-    background-color: rgba(239, 239, 239, 0.678);
-    border-radius: 35px;
-    gap: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.403); /*sombra*//* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.774); sombra */
-    /* desde aqui é apenas para a parde da cor do dregade, e não para a card grande, apenas a card de dentro */
-    /* display: flex;
-    justify-content: center;
-    align-items:flex-start; */
-    display: flex;
-    flex-direction: column; /* Para empilhar o conteúdo verticalmente */
-    justify-content: space-between; /* Deixa o conteúdo nas extremidades: topo e base */
-    align-items: center;
-    /*padding: 10px;  Espaço interno */
-}
-
-/*ESTA PARTE É PARA A ANIMÇÃO DAS CARDS E VIRAR*/
-
-
-.cardInner {
-  width: 1160px;
-  height: 300px;
-  position: relative;
-  transition: transform 2s;
-  transform-style: preserve-3d;
-}
-
-.flipped .cardInner {
-  transform: rotateY(180deg);
-}
-
-.cardFront,
-.cardBack {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 35px;
-  backface-visibility: hidden;
+.cardProjects {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;              /* permite quebrar linha */
+  justify-content: center;      /* centraliza na horizontal */
+  align-items: flex-start;
+  gap: 40px;                    /* espaço entre cards */
+             /* controla largura total do bloco */
+  margin: 0 auto;               /* centraliza o grupo */
+}
+.cardPro {
+  position: relative;
+  width: 550px;                 /* largura que permite 2 por linha */
+  height: 250px;
+  background-color: rgba(239, 239, 239, 0.9);
+  border-radius: 35px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px 60px;
+  overflow: hidden;
 }
 
-.cardBack {
-  background-image: linear-gradient(to bottom right, rgba(191, 192, 189, 0.579), rgba(197, 197, 185, 0.47));
-  transform: rotateY(180deg);
-  margin-top: 10px;
-  width: 1160px; 
-  height: 300px;
+.cardPro p {
+  font-size: 18px;
+  color: #222;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-bottom: 25px;
+}
+
+.cardPro h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* círculo azul cortado */
+.circuloDaCard {
+  position: absolute;
+  bottom: -40px; /* controla quanto é cortado */
+  right: -40px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+   background:  #f5d74f; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botaoCard {
+  background-color: #c4c4c4;
+  color: #333;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.botaoCard:hover {
+  transform: scale(1.010);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.circuloDaCard img {
+  width: auto;               /* mantém proporção original */
+  height: 120px;              /* define o tamanho visível */
+  max-width: 100%;           /* evita que ultrapasse o círculo */
+  object-fit: contain;       /* mostra toda a imagem, sem corte */
+  /* border-radius: 50%;        arredonda suavemente se desejar */
+  transition: transform 0.3s ease;
 }
 
 .TituloCard{
     color: rgb(72, 68, 68);
-    font-size: 48px;
-    font-family:-apple-system;
-    font-family: Open Sans Bold;
+    font-size: 30px;
+    font-family: Noto Sans, sans-serif;
     margin: 0; /* Remove espaçamento externo */
 }
 
-
-.cardCorDegrade1{
-    border-radius: 35px;
-    background-image: linear-gradient(to bottom right, rgb(229, 126, 70), rgb(235, 231, 126));/* background-image: linear-gradient(to bottom right, rgb(233, 230, 216), rgb(202, 209, 240)); */
-    width: 1160px; 
-    height: 300px; 
-    margin-top: 10px; /*com isto a parte do degrande pode baixar umm pouquinho da card */
+.textoCard{
+  font-size: 20px;
+  color: rgb(30, 28, 28);
+  padding: 50px;
 }
-
-.cardCorDegrade2{
-    border-radius: 35px;
-    background-image: linear-gradient(to bottom right, rgb(202, 220, 123), rgb(166, 233, 179));
-    width: 1160px; 
-    height: 300px; 
-    margin-top: 10px; /*com isto a parte do degrande pode baixar umm pouquinho da card */
+.textoCard a {
+  text-decoration: none;
 }
-
-.cardCorDegrade3{
-    border-radius: 35px;
-    background-image: linear-gradient(to bottom right, rgb(106, 113, 219), rgb(165, 197, 193));
-    width: 1160px; 
-    height: 300px; 
-    margin-top: 10px; /*com isto a parte do degrande pode baixar umm pouquinho da card */
-}
-
 
 /* QUINTO */
 
 .quintoContainer{
-    color: aliceblue;
+    color: rgba(239, 239, 239, 0.678);
     text-align: justify;
     font-size: 20px;
 }
-
-    /* .cardContato{
-        width: 1174px;
-        height: 110px;
-        background-color: rgba(239, 239, 239, 0.678);
-        border-radius: 35px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.403); /*sombra*//*box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.774); sombra*/
-    /* } */ 
 
 .OsLogos{
     display: flex;
@@ -337,17 +308,14 @@ main{
     transition: 0.400s;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.403);
 }
-
 /*aqui muda a cor quando passar o mouse por cima (de red para blue)*/
 .infoLogotipo:hover{
   background: rgba(215, 215, 215, 0.678);   
 }
-
 /*aqui muda a cor da imagem (apenas para imagens render)*/
 .infoLogotipo:hover .logo {
     filter: invert(40%) sepia(100%) saturate(500%) hue-rotate(180deg);
 }
-
 /*logotipos das imagens*/
 .logoContato{
     width: 40px;
@@ -356,16 +324,6 @@ main{
     justify-content: center;
     align-items: center;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -388,6 +346,7 @@ main{
   animation: fadeOut 2s ease forwards;
   animation-delay: 2.5s;
 } 
+  
 
 /* Desaparecer suavemente */
 @keyframes fadeOut {
@@ -401,13 +360,11 @@ main{
 /*Portafólio | Manuel Padilla A PRIMEIRA PARTE*/
 h3{
     color:rgb(9, 9, 11);
-    font-family: sans-serif;
+    font-family: Verdana, sans-serif;
     font-size: 70px;
     display: flex;
     justify-content: center; 
 }
-
-
 
 .descricaoTexto {
   padding: 20px;
@@ -417,4 +374,369 @@ h3{
   border-radius: 20px;
   margin-top: 10px;
   width: 100%;
+}
+
+/*MODO DARK*/
+/* Estilo do botão de modo dark e ligth*/
+.meiaLua {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.722);
+  position:relative;
+  transform: rotate(30deg);
+  overflow: hidden; /* Garante que nada extrapole */
+}
+
+.meiaLua::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px; /* ← mudou de right para left */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(82, 82, 82, 0.451);
+}
+.meiaLua:hover{
+  box-shadow: 0 0 10px 5px rgba(11, 4, 69, 0.7); 
+}
+
+.sol {
+  display: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(227, 144, 10, 0.888); /* azul */
+  position: relative;
+  overflow: hidden;
+  transform: rotate(0deg); /* opcional: retire o rotate se não quiser inclinar */
+}
+
+.sol::after {
+  content: "";
+  position: absolute;
+  top: 5px;    /* centralização vertical */
+  left: 5px;   /* centralização horizontal */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(228, 183, 5, 0.876); /* amarelo */
+}
+
+.sol:hover{
+  box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.691); 
+}
+
+
+
+.darkMode {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 30px;
+  height: 30px;
+} 
+
+body.dark-mode .meiaLua {
+    display: none;
+}
+
+body.dark-mode .sol {
+    display: block;
+}
+
+.darkMode:hover {
+  transform: scale(1.2);
+}
+
+/* MODO ESCURO GERAL */
+body.dark-mode {
+  background-color: rgba(2, 2, 9, 0.872);
+  color: #f0f0f0;
+}
+
+body.dark-mode .info,
+body.dark-mode .subtitulos,
+body.dark-mode .TituloCard,
+body.dark-mode .segundoContainer,
+body.dark-mode .cardAbout,
+body.dark-mode .cardHabilidades,
+body.dark-mode .cardHabi,
+body.dark-mode .cardPro,
+body.dark-mode .cardPro p,
+body.dark-mode .descricaoTexto,
+body.dark-mode .textoCard {
+  color: rgba(255, 255, 255, 0.973);
+}
+
+body.dark-mode .cardAbout,
+body.dark-mode .cardHabi,
+body.dark-mode .infoLogotipo,
+body.dark-mode .infoLogotipo
+body.dark-mode .cardHabi,
+body.dark-mode .cardPro{
+  background: rgba(66, 65, 65, 0.8);
+}
+
+
+/* Hover dos botões e caixas no dark mode */
+body.dark-mode .cardAbout:hover,
+body.dark-mode .cardHabi:hover,
+body.dark-mode .infoLogotipo:hover,
+body.dark-mode .cardPro:hover{
+  background: rgba(70, 70, 70, 0.9);
+}
+
+/* Header no dark mode */
+body.dark-mode header {
+  background-color: rgba(110, 109, 109, 0.8);
+}
+
+body.dark-mode .nav a {
+  color: rgb(255, 252, 252);
+}
+
+body.dark-mode .nav a:hover {
+  color: #f5d74f;
+}
+
+body.dark-mode .logo:hover {
+  color: #f5d74f;
+}
+
+body.dark-mode .logoContato {
+  filter: invert(90%);
+}
+
+
+/* === TABLETS GRANDES (até 1200px) === */
+@media (max-width: 1200px) {
+  main {
+    padding: 6rem 2rem;
+    gap: 100px;
+  }
+
+  .logo {
+    margin-left: 40px;
+  }
+
+  .nav {
+    gap: 2rem;
+    margin-right: 40px;
+    font-size: 18px;
+  }
+
+  .cardAbout {
+    width: 90%;
+    flex-direction: column;
+    height: auto;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .cardProjects {
+    gap: 30px;
+  }
+
+  .cardPro {
+    width: 90%;
+    height: auto;
+  }
+
+  .circuloDaCard {
+    width: 180px;
+    height: 180px;
+    bottom: -25px;
+    right: -25px;
+  }
+
+  .circuloDaCard img {
+    height: 90px;
+  }
+}
+
+/* === TABLETS PEQUENOS E CELULARES GRANDES (até 900px) === */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .segundoContainer,
+  .tercerContainer,
+  .quartoConteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centraliza horizontalmente */
+    justify-content: center; /* centraliza verticalmente */
+    text-align: center;    /* centraliza o texto */
+    min-height: 100vh;     /* ocupa toda a altura da tela */
+    padding: 2rem 1rem;    /* espaçamento interno */
+    box-sizing: border-box;
+  }
+
+
+  .cardAbout {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .logo {
+    margin-left: 0;
+    font-size: 20px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-right: 0;
+    font-size: 10px;
+  }
+
+  .primerConteiner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .web {
+    font-size: 20px;
+  }
+
+  .Photo .me_photo {
+    width: 220px;
+    height: 220px;
+  }
+
+  .cardHabilidades {
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+
+  .cardHabi {
+    width: 160px;
+    height: 65px;
+  }
+
+  .cardPro {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+  }
+
+  .circuloDaCard {
+    width: 140px;
+    height: 140px;
+    bottom: -20px;
+    right: -20px;
+  }
+
+  .circuloDaCard img {
+    height: 70px;
+  }
+
+  .OsLogos {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+/* === CELULARES (até 600px) === */
+@media (max-width: 600px) {
+  header {
+    position: relative;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .nav {
+    flex-direction:row;
+    align-items: center;
+    gap: 22px;
+    font-size: 15px;
+  }
+
+  .primerConteiner {
+    padding: 20px;
+    gap: 20px;
+    
+    align-items: center;
+  }
+
+  .name {
+    font-size: 35px;
+  }
+
+  .web {
+    font-size: 18px;
+  }
+
+  .cardAbout {
+    width: 95%;
+    padding: 30px;
+    
+    gap: 20px;
+  }
+
+  .cardAbout .me_photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .cardProjects {
+    gap: 40px;
+  }
+
+  .cardPro {
+    width: 95%;
+    padding: 20px;
+    font-size: 100px;
+  }
+
+  .circuloDaCard {
+    width: 180px;
+    height: 180px;
+    bottom: -15px;
+    right: -15px;
+  }
+
+  .circuloDaCard img {
+    height: 90px;
+  }
+
+  .botaoCard {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .OsLogos {
+    flex-direction:row-reverse;
+    gap: 20px;
+  }
+  .subtitulos{
+    flex-direction:column;
+    align-items: center;
+  }
+
+  .infoLogotipo {
+    width: 100px;
+    height: 50px;
+  }
 }
